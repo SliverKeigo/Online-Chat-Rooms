@@ -4,9 +4,9 @@
 
 1. Go to the project directory and install the node_module dependency first.
 
-``
+```
 npm install
-npm install
+```
 
 2. Start the project locally
 
@@ -58,4 +58,4 @@ localhost:3000/chatroom
 dev.ts -> redirect to main/main.html and chatRoom/chatRoom.html
 prod.ts -> direct return to main/main.html and chatRoom/chatRoom.html
 
-``
+```
