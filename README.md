@@ -1,4 +1,4 @@
- [English]
+  [<a href="README.md">中文(简体)</a>] | [<a href="README_EN.md">English</a>]
 
 # 在线聊天室
 
