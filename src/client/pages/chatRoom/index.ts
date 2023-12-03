@@ -86,7 +86,7 @@ function MessageHandler(data: UserMsg) {
     divBox.classList.add('justify-start')
     // 不是自己发的消息放在左边
     divBox.innerHTML = `
- <div class="flex justify-end mb-4 items-end">
+ <div class="flex justify-end mb-4 items-start">
     <p class="text-xs text-gray-700">  ${time}</p>
     <div>
       <p class="text-xs text-gray-700 mb-1 text-left">${data.userData.userName}</p>

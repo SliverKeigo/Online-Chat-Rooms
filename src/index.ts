@@ -4,7 +4,7 @@ import express from "express";
 import {Server} from 'socket.io'
 import http from 'http'
 import {name} from "@/utils";
-import UserService from '@/service/UserService'
+import UserService, {UserData} from '@/service/UserService'
 import moment from 'moment'
 
 const port = 3000;
@@ -23,6 +23,10 @@ io.on('connection', (socket) => {
     n++
     console.log(userName, roomName)
     console.log(socket.id)
+    const user:UserData | null = userService.getUser(socket.id)
+    if (user){
+      return
+    }
     const userData = userService.userDataInfoHandler(
       socket.id,
       userName,
