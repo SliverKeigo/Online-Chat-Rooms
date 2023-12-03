@@ -1,6 +1,6 @@
 import webpack from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
-import { Express } from "express";
+import {Express} from "express";
 
 export default function (app: Express) {
   const config = require("../../webpack.config.js");

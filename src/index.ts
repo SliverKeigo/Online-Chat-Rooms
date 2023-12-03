@@ -3,25 +3,27 @@ import prodServer from "./server/prod";
 import express from "express";
 import {Server} from 'socket.io'
 import http from 'http'
-import { name } from "@/utils";
+import {name} from "@/utils";
 import UserService from '@/service/UserService'
+import moment from 'moment'
+
 const port = 3000;
 const app = express();
 const server = http.createServer(app)
 const io = new Server(server)
 const userService = new UserService()
-import moment from 'moment'
+
 let n = 1
 // 监测连接
 io.on('connection', (socket) => {
-  socket.emit('userId',socket.id)
-  socket.on('join', ({userName, roomName}:{userName:string,roomName:string}) => {
+  socket.emit('userId', socket.id)
+  socket.on('join', ({userName, roomName}: { userName: string, roomName: string }) => {
     console.log("------------------------")
-    console.log('第',n,'次连接')
+    console.log('第', n, '次连接')
     n++
     console.log(userName, roomName)
     console.log(socket.id)
-    const  userData = userService.userDataInfoHandler(
+    const userData = userService.userDataInfoHandler(
       socket.id,
       userName,
       roomName
@@ -33,10 +35,10 @@ io.on('connection', (socket) => {
       .emit('join', `${userData.userName} 加入了${userData.roomName}聊天室`)
   })
   // 离开聊天室
-  socket.on('disconnect',() =>{
+  socket.on('disconnect', () => {
     const userData = userService.getUser(socket.id)
     const userName = userData?.userName
-    if (userName){
+    if (userName) {
       socket.broadcast
         .to(userData.roomName)
         .emit('leave', `${userName} 离开${userData?.roomName}聊天室`)
@@ -46,7 +48,7 @@ io.on('connection', (socket) => {
   socket.on('chat', (msg) => {
     const time = moment.utc()
     const userData = userService.getUser(socket.id)
-    if (userData){
+    if (userData) {
       io.to(userData.roomName)
         .emit('chat', {userData, msg, time})
     }

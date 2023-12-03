@@ -1,5 +1,4 @@
 import "./index.css";
-import {name} from "@/utils";
 import {io} from 'socket.io-client'
 import {UserData} from '@/service/UserService'
 

@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
-const { HotModuleReplacementPlugin } = require("webpack")
+const {HotModuleReplacementPlugin} = require("webpack")
 const path = require('path');
 
 const entries = {
@@ -36,12 +36,12 @@ module.exports = {
         test: /\.gif/,
         type: 'asset/resource'
       },
-      { 
-        test: /\.tsx?$/, 
-        loader: "ts-loader", 
+      {
+        test: /\.tsx?$/,
+        loader: "ts-loader",
         options: {
           configFile: 'tsconfigClient.json'
-        } 
+        }
       }
     ],
   },

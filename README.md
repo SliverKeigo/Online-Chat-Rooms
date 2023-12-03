@@ -1,4 +1,5 @@
-# Online Chat Rooms
+# bruce_nodejs_project_template
+
 ## How do I use it?
 
 1. Go to the project directory and install the node_module dependency first.

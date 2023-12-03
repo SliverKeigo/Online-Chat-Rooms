@@ -1,5 +1,4 @@
 import "./index.css";
-import { name } from "@/utils";
 
 const nameInput = document.getElementById("nameInput") as HTMLInputElement
 const nameSelect = document.getElementById("nameSelect") as HTMLSelectElement

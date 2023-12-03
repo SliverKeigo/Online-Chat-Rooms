@@ -1,4 +1,4 @@
-import express, { Express } from "express";
+import express, {Express} from "express";
 import compression from "compression";
 import path from "path";
 
