@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BRUCE CHAT</title>
+    <title>Keigo CHAT</title>
   </head>
   <body class="bg-dark">
     <!-- page 2 -->
@@ -12,7 +12,7 @@
       <header
         class="w-full h-[56px] px-4 box-border flex justify-between items-center"
       >
-        <button class="text-white">
+        <button class="text-white" id="backBtn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-[40px] w-[40px]"
@@ -26,44 +26,36 @@
             />
           </svg>
         </button>
-        <p class="text-white font-extrabold">ROOM 1</p>
+        <p id="headRoomName" class="text-white font-extrabold"> - </p>
         <div class="h-[40px] w-[40px]"></div>
       </header>
 
       <div
         class="mt-[10px] box-border px-4 h-[calc(100vh-156px)] overflow-y-scroll"
+        id="chatBoard"
       >
-        <div class="flex justify-start mb-4 items-end">
-          <div>
-            <p class="text-xs text-gray-700 mb-1">SliverKeigo</p>
-            <p
-              class="mx-w-[50%] break-all bg-gray-800 px-4 py-2 rounded-tr-full rounded-br-full rounded-tl-full text-white"
-            >
-              Hello!
-            </p>
-          </div>
+<!--        <div class="flex justify-start mb-4 items-end">-->
 
-          <p class="text-xs text-gray-700 ml-4">00:00</p>
-        </div>
+<!--        </div>-->
 
         <!-- right side -->
 
-        <div class="flex justify-end mb-4 items-end">
-          <p class="text-xs text-gray-700 mr-4">00:00</p>
+<!--        <div class="flex justify-end mb-4 items-end">-->
+<!--          <p class="text-xs text-gray-700 mr-4">00:00</p>-->
 
-          <div>
-            <p class="text-xs text-white mb-1 text-right">SliverKeigo</p>
-            <p
-              class="mx-w-[50%] break-all bg-white px-4 py-2 rounded-bl-full rounded-br-full rounded-tl-full"
-            >
-              Hello!
-            </p>
-          </div>
-        </div>
+<!--          <div>-->
+<!--            <p class="text-xs text-white mb-1 text-right">Keigo</p>-->
+<!--            <p-->
+<!--              class="mx-w-[50%] break-all bg-white px-4 py-2 rounded-bl-full rounded-br-full rounded-tl-full"-->
+<!--            >-->
+<!--              Hello!-->
+<!--            </p>-->
+<!--          </div>-->
+<!--        </div>-->
 
-        <div class="flex justify-center mb-4 items-center">
-          <p class="text-gray-700 text-sm">bruce joined the room</p>
-        </div>
+<!--        <div class="flex justify-center mb-4 items-center">-->
+<!--          <p class="text-gray-700 text-sm">SliverKeigo joined the room</p>-->
+<!--        </div>-->
       </div>
 
       <div class="flex px-[20px] py-[20px]">
@@ -71,10 +63,11 @@
           type="text"
           class="bg-gray-700 w-full h-[40px] rounded-full box-border mr-4 text-white"
           name=""
-          id=""
+          id="textInput"
         />
         <button
           class="w-[50px] h-[40px] rounded-md flex justify-center items-center"
+          id="textSubmit"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

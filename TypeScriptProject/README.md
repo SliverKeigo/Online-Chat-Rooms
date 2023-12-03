@@ -4,9 +4,9 @@
 
 1. Go to the project directory and install the node_module dependency first.
 
-``
+```
 npm install
-npm install
+```
 
 2. Start the project locally
 
@@ -44,12 +44,12 @@ npm run start
 
 - Node Server
 
-3. Start express server
-4. Determine the current process.env.NODE_ENV environment:
+1. Start express server
+2. Determine the current process.env.NODE_ENV environment:
    NODE_ENV environment: 4-1 For local development, go to `dev.ts`, 4-2 For online environment, go to `process.env.
    4-2 The online environment is `prod.ts`.
 
-5. user requests a page from the browser (client side) to the Node Server:
+3. user requests a page from the browser (client side) to the Node Server:
 
 ```
 localhost:3000/main
@@ -58,4 +58,4 @@ localhost:3000/chatroom
 dev.ts -> redirect to main/main.html and chatRoom/chatRoom.html
 prod.ts -> direct return to main/main.html and chatRoom/chatRoom.html
 
-``
+```
