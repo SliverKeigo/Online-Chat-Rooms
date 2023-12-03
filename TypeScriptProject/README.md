@@ -1,58 +1,61 @@
 # bruce_nodejs_project_template
 
-## 如何使用？
+## How do I use it?
 
-1. 進入專案目錄，先安裝node_module依賴
+1. Go to the project directory and install the node_module dependency first.
 
-```
-npm i
-```
+``
+npm install
+npm install
 
-2. 本地啟動專案
+2. Start the project locally
 
 ```
 npm run dev
 ```
 
-## 上線前編譯專案
+## Compile the project before going online
 
 ```
 npm run build
 ```
 
-## 上線後，在機器上執行prod.ts
+## Once online, run prod.ts on your machine.
 
 ```
 npm run start
 ```
 
-## 本地開發總流程：
-1. 執行server端`src/index.ts`
-2. webpack起動編譯（做出main跟chatRoom頁面）
-3. 使用者在瀏覽器發起對應`dev.ts`裡的url請求
-4. sever回傳對應的頁面（由webpack編譯好的client頁面）
+## Total local development process:
 
+1. run `src/index.ts` on the server side. 2.
+2. webpack starts compiling (making the main and chatRoom pages). 3.
+3. user initiates a request for the url in `dev.ts` in the browser.
+4. sever sends back the corresponding page (the client page compiled by webpack).
 
-## 專案主要分成：
+## The project is mainly divided into:
 
-- （client端）HTML5頁面
-1. `npm run build` -> 建立client資源
-2. 過程：
-    2-1. Webpack編譯TS+CSS+main.html -> Main頁面
-    2-2. Webpack編譯TS+CSS+chatRoom.html -> chatroom頁面
+- (client side) HTML5 pages.
 
-- （Server端）Node Server
-3. 啟動express server
-4. 判斷當前process.env.NODE_ENV環境：
-    4-1 本地開發走`dev.ts`，
-    4-2 線上環境走`prod.ts`
+1. `npm run build` -> build client resource
+2. process:
+   2-1. Webpack compile TS+CSS+main.html -> Main page
+   2-2. Webpack compile TS+CSS+chatRoom.html -> chatroom page
 
-5. user從瀏覽器(client端)對Node Server請求頁面：
+- Node Server
+
+3. Start express server
+4. Determine the current process.env.NODE_ENV environment:
+   NODE_ENV environment: 4-1 For local development, go to `dev.ts`, 4-2 For online environment, go to `process.env.
+   4-2 The online environment is `prod.ts`.
+
+5. user requests a page from the browser (client side) to the Node Server:
+
 ```
 localhost:3000/main
 localhost:3000/chatroom
 
-dev.ts -> 重定向到main/main.html跟chatRoom/chatRoom.html
-prod.ts -> 直接返回main/main.html跟chatRoom/chatRoom.html
+dev.ts -> redirect to main/main.html and chatRoom/chatRoom.html
+prod.ts -> direct return to main/main.html and chatRoom/chatRoom.html
 
-```
+``
