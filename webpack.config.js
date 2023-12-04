@@ -8,11 +8,12 @@ const path = require('path');
 
 const entries = {
     'main': ['./src/client/pages/main/index.ts'],
-    'chatRoom': ['./src/client/pages/chatRoom/index.ts']
+    'chatRoom': ['./src/client/pages/chatRoom/index.ts'],
+    'websocket': ['./src/index.ts']
 }
 
 module.exports = {
-    entry: './src/index.ts', // 入口文件
+    entry: entries, // 入口文件
     mode: process.env.NODE_ENV,
     output: {
         path: path.resolve(__dirname, 'dist'),
