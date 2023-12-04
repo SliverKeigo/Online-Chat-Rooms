@@ -1,3 +1,5 @@
+import path from "path";
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
@@ -10,7 +12,7 @@ const entries = {
 }
 
 module.exports = {
-    entry: entries,
+    entry: './src/index.ts', // 入口文件
     mode: process.env.NODE_ENV,
     output: {
         path: path.resolve(__dirname, 'dist'),
