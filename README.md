@@ -64,11 +64,11 @@ npm run start
 
 2. 确定当前 process.env.NODE_ENV 环境:
 
-NODE_ENV 环境:
+- NODE_ENV 环境:
 
-1 本地开发走 `dev.ts`
+1. 本地开发走 `dev.ts`
 
-2 上线环境走 `prod.ts`。
+2. 上线环境走 `prod.ts`。
 
 3. 用户从浏览器(客户端)向 Node 服务器请求一个页面:
 
