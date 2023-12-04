@@ -47,10 +47,15 @@ npm run start
 
 1. Start express server
 2. Determine the current process.env.NODE_ENV environment:
-   NODE_ENV environment: 4-1 For local development, go to `dev.ts`, 4-2 For online environment, go to `process.env.
-   4-2 The online environment is `prod.ts`.
+   NODE_ENV environment:
+   
+   2-1. For local development, go to `dev.ts`,
+   
+   2-2. For online environment, go to `process.env.
+   
+   2-3. The online environment is `prod.ts`.
 
-3. user requests a page from the browser (client side) to the Node Server:
+4. user requests a page from the browser (client side) to the Node Server:
 
 ```
 localhost:3000/main
