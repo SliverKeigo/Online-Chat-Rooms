@@ -1,10 +1,10 @@
-名字: Online Chat Rooms
+name: Online Chat Rooms
 
 on:
   push:
-    分支: [ "master" ]
+    branches: [ "master" ]
   pull_request:
-    分支: [ "master" ]
+    branches: [ "master" ]
 # 环境变量
 env:
   # GitHub 用户名
@@ -27,16 +27,16 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - 名字: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
 
-    - 名字: Build
+    - name: Build
       run: |
         npm install
         npx webpack
-    - 名字: Deploy
+    - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         # 指定前面准备的 token
