@@ -5,17 +5,17 @@ const {HotModuleReplacementPlugin} = require("webpack")
 const path = require('path');
 
 const entries = {
-    // 公共部分
-    common: './src/index.ts',
+    // // 公共部分
+    // common: './src/index.ts',
     // client部分
     main: './src/client/pages/main/index.ts',
     chatRoom: './src/client/pages/chatRoom/index.ts',
-    // server部分
-    server: './src/server/prod.ts',
-    //其他util等
-    utils: './src/utils/index.ts',
-    // server
-    service: './src/server/service/UserService.ts',
+    // // server部分
+    // server: './src/server/prod.ts',
+    // //其他util等
+    // utils: './src/utils/index.ts',
+    // // server
+    // service: './src/server/service/UserService.ts',
 };
 
 module.exports = {
