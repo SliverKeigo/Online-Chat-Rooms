@@ -7,7 +7,6 @@ import {name} from "@/utils";
 import UserService, {UserData} from '@/service/UserService'
 import moment from 'moment'
 
-
 const port = 3000;
 const app = express();
 const server = http.createServer(app)
@@ -19,11 +18,6 @@ let n = 1
 io.on('connection', (socket) => {
     socket.emit('userId', socket.id)
     socket.on('join', ({userName, roomName}: { userName: string, roomName: string }) => {
-        console.log("------------------------")
-        console.log('第', n, '次连接')
-        n++
-        console.log(userName, roomName)
-        console.log(socket.id)
         const user: UserData | null = userService.getUser(socket.id)
         if (user) {
             return

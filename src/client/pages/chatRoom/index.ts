@@ -72,32 +72,30 @@ function MessageHandler(data: UserMsg) {
     divBox.classList.add('flex', 'mb-4', 'items-end')
     console.log(data)
     if (data.userData.id === userID) {
-        divBox.classList.add('justify-end')
-        divBox.innerHTML = `
-      <div class="flex justify-end mb-4 items-end">
-      <p class="text-xs text-gray-700 mr-4">  ${time}</p>
-      <div>
-        <p class="text-xs text-white mb-1 text-right">${data.userData.userName}</p>  
-        <p class="mx-w-[50%] break-all bg-white px-4 py-2 rounded-bl-full rounded-br-full rounded-tl-full">${data.msg}</p>
-      </div>
-      <div>
-  `
-    } else {
-        divBox.classList.add('justify-start')
-        // 不是自己发的消息放在左边
-        divBox.innerHTML = `
- <div class="flex justify-end mb-4 items-start">
-    <p class="text-xs text-gray-700">  ${time}</p>
-    <div>
-      <p class="text-xs text-gray-700 mb-1 text-left">${data.userData.userName}</p>
-      <p class="mx-w-[50%] break-all bg-gray-800 px-4 py-2 rounded-tr-full rounded-br-full rounded-tl-full text-white">
-        ${data.msg}
-      </p>
-    </div>
-      </div>
-`
-    }
 
+        divBox.classList.add('justify-end');
+
+        divBox.innerHTML = `
+    <div class="flex justify-end mb-4">
+      <div class="flex flex-col items-end"> 
+        <p class="text-xs text-gray-700 mb-1 text-right">${data.userData.userName} ${time}</p>
+        <p class="mx-w-[50%] break-all bg-blue-600 px-4 py-2 rounded-bl-full rounded-br-full rounded-tl-full text-white">${data.msg}</p>
+      </div>
+    </div>
+  `;
+
+    } else {
+        // 对方的消息
+        divBox.classList.add('justify-start');
+        divBox.innerHTML = `
+    <div class="flex justify-start mb-4">  
+      <div class="flex flex-col items-start">
+        <p class="text-xs text-gray-700 mb-1">${data.userData.userName} ${time}</p>
+        <p class="mx-w-[50%] break-all bg-gray-300 px-4 py-2 rounded-tr-full rounded-tl-full rounded-br-full text-gray-800">${data.msg}</p>
+      </div>
+    </div>
+  `;
+    }
     chatBoard.append(divBox)
 
     // 输入消息清空输入框
